@@ -10,8 +10,8 @@ import edu.wpi.first.units.Units;
 import edu.wpi.first.wpilibj.util.Color;
 import edu.wpi.first.wpilibj.util.Color8Bit;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import com.lumynlabs.*;
 
+import com.lumynlabs.connection.usb.USBPort;
 import com.lumynlabs.devices.ConnectorXAnimate;
 
 public class LumynLED extends SubsystemBase 
@@ -22,7 +22,7 @@ public class LumynLED extends SubsystemBase
   /** Creates a new LumynLED. */
   public LumynLED() 
   {
-
+    cx.Connect(USBPort.kUSB1);
   }
 
   @Override
