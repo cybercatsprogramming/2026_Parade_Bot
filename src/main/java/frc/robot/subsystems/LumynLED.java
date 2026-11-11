@@ -23,6 +23,7 @@ public class LumynLED extends SubsystemBase
   public LumynLED() 
   {
     cx.Connect(USBPort.kUSB1);
+    cx.ApplyConfiguration(buildConfig());
   }
 
   @Override
@@ -35,5 +36,15 @@ public class LumynLED extends SubsystemBase
       .Reverse(false)
       .RunOnce(false);
     // This method will be called once per scheduler run
+  }
+        return new ConfigBuilder()
+        .forTeam("5436")
+        // Channels
+        .addChannel(1, "", 300)
+            .addStripZone("train-strip", 300, false)
+        .endChannel()
+        
+        .build();
+    }
   }
 }
